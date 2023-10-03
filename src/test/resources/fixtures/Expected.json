@@ -1,0 +1,6 @@
+{
+  "id": 1,
+  "greeting": "hello",
+  "singleNumber": "ONE",
+  "numbers": ["ONE", "TWO"]
+}

@@ -1,7 +1,5 @@
 package org.acme
 
-
-import GreetingEntityJava
 import jakarta.transaction.Transactional
 import jakarta.ws.rs.GET
 import jakarta.ws.rs.Path
@@ -16,9 +14,8 @@ class GreetingController(
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Transactional
-    fun hello(): GreetingEntityJava {
-//        val greeting = GreetingEntityJava(arrayOf("test"))
-        val greeting = GreetingEntityJava()
+    fun hello(): GreetingEntity {
+        val greeting = GreetingEntity(Number.THREE)
         repository.persist(greeting)
         return greeting
     }

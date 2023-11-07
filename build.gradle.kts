@@ -2,6 +2,7 @@ plugins {
     kotlin("jvm") version "1.9.10"
     kotlin("plugin.allopen") version "1.9.10"
     id("io.quarkus")
+    id("org.jetbrains.kotlin.plugin.noarg") version "1.9.10"
 }
 
 repositories {
@@ -25,6 +26,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("io.quarkus:quarkus-arc")
     implementation("io.quarkus:quarkus-hibernate-orm")
+    implementation("io.hypersistence:hypersistence-utils-hibernate-62:3.6.0")
     testImplementation("io.quarkus:quarkus-junit5")
     testImplementation("io.rest-assured:rest-assured")
     testImplementation("org.testcontainers:testcontainers:1.17.6")
@@ -54,4 +56,8 @@ allOpen {
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
     kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
     kotlinOptions.javaParameters = true
+}
+
+noArg {
+    annotation("jakarta.persistence.Entity")
 }

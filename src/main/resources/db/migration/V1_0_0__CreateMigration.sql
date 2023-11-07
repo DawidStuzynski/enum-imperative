@@ -8,10 +8,8 @@ CREATE TYPE number AS ENUM (
 
 CREATE TABLE example_table
 (
-    id            BIGINT,
---     numbers       text[],
+    id     BIGINT,
+    number number NOT NULL,
     PRIMARY KEY (id)
 );
 
--- INSERT INTO example_table (id, numbers, single_number, greeting)
--- VALUES (1, ARRAY['ONE', 'TWO'], 'THREE', 'Greeting');

@@ -21,5 +21,4 @@ class ExampleResourceTestIT {
             println(result)
         }
     }
-
 }
